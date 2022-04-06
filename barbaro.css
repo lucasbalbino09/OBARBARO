@@ -1,0 +1,139 @@
+:root {
+    --color-white: #fff;
+    --color-dark1: #272727;
+    --color-dark2: #2d2d2d;
+    --color-dark3: #414141;
+    --color-dark4: #1c1c1c;
+    --color-dark5: #343434;
+    --color-purple: #b040ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #272727;
+    color: var(--color-white);
+}
+
+img {
+    width: 80px;
+    border-radius: 5px;
+}
+
+.header,
+.navigation_header {
+    display: flex;
+    /* coloca a palavra um do lado do outro */
+    flex-direction: row;
+    /* cooloca a frase a baixo */
+    align-items: center;
+    /* alinham as colunas no centro */
+}
+
+.header {
+    background: var(--color-dark2);
+    box-shadow: 1px 1px 4px var(--color-dark4);
+    height: 3.5em;
+    justify-content: space-between;
+    padding: 0 10%;
+    /*define somente o espaçamento entre os elementos e a borda*/
+}
+
+.navigation_header {
+    gap: 3em;
+    /*deifine o tamanho da lacuna */
+    z-index: 2;
+    /* sobrepor uma tela por outra */
+}
+
+.navigation_header a {
+    text-decoration: none;
+    /* retira os sublinhados que existem abaixo dos links */
+    color: rgb(243, 57, 57);
+    transition: 1s;
+    /* tansição entre telas */
+    font-weight: bold;
+    /* Deixou o texto em negrito */
+}
+
+.active {
+    background-color: var(--color-dark3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content {
+    text-align: center;
+    padding-top: 5em;
+    /* espaçamento entre a escrita e a borda. */
+    height: 100vh;
+    /* todo conteudo tem uma altura de 100vh */
+    transition: 1s;
+    color: red;
+}
+
+.btn_icon_header {
+    display: none;
+    /*sumiu com os displays */
+    background-color: transparent;
+    /* deixando os icones transparentes */
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    /* estilo do cursor */
+}
+
+@media screen and (max-width: 768px) {
+    .btn_icon_header {
+        display: block;
+    }
+    .navigation_header {
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        /* esse comando faz com que apareça em coluna */
+        background-color: var(--color-dark5);
+        height: 100%;
+        width: 35vw;
+        padding: 1em;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+}
+
+@keyframes showSidebar {
+    from {
+        margin-left: -100vw;
+    }
+    top {
+        margin-left: -10vw;
+    }
+}
+
+.historia {
+    padding-top: 40px;
+    text-align: left;
+    font: normal 25px Arial;
+    margin-left: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.drag {
+    color: rgb(204, 21, 21, 0.342);
+}
+
+.menino {
+    margin-left: 39%;
+}
+
+.brabopng {
+    padding: 50px;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 100px;
+}
